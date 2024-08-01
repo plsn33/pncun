@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora IMC</title>
+    <style>
+body {
+        background-image: url('https://static6.depositphotos.com/1072524/565/i/380/depositphotos_5650924-stock-photo-cat-and-dog-red-color.jpg');
+      background-size: cover;
+
+        background-repeat: no-repeat;
+    }
+    h1 {color: black;
+    font-size: 50px;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
+    span{
+        color: white; font-size: 20px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    button{padding: 10px;
+        border: 1px solid black; 
+        cursor: pointer;
+        background-color: white;
+        font-size: medium;
+        color: black;
+font-family:Arial, Helvetica, sans-serif    }
+    </style>
+</head>
+<body>
+    <h1>CALCULE SEU IMC AQUI SEU PNC </h1>
+    <form>
+        <label for="peso"> Digite seu peso (kg): </label>
+        <input type="number" name="peso"id="peso" required>
+        <br>
+        <div></div>
+        <label for="Altura">Digite sua altura: </label>
+        <input type="number" name="altura" id="altura" required>
+        <br>
+        <button type = 'button' onclick=" calcularIMC()">Calcular IMC</button>
+        <br>
+        <span id = 'resultado'>Seu Imc é:  </span>
+        
+    
+    </form>
+    <img src='https://st.depositphotos.com/1158266/2693/i/380/depositphotos_26930933-stock-photo-cat-portrait.jpg' alt="im" width=" 400" height="300" >
+    
+
+    <script>
+        function calcularIMC () {
+            var peso = parseFloat(document.getElementById('peso').value);
+            var altura = parseFloat(document.getElementById('altura').value);
+        
+        if (peso > 0 && altura > 0) {
+            var imc = peso / (altura * altura);
+            document.getElementById('resultado').innerText = 'Seu imc é: ' + imc.toFixed(2);
+        } else { 
+            document.getElementById('resultado').innerText = 'Por favor, digite valores';
+        }
+    }
+
+        
+            
+        
+
+
+
+
+    </script>
+</body>
+</html>
